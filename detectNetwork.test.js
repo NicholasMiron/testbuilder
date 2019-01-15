@@ -383,4 +383,94 @@ describe('should support China UnionPay', function() {
   });
 
 });
-describe('should support Switch')
+describe('should support Switch', function() {
+  //Tests prefix 4903 and length 16, 18, and 19
+  it('has prefix 4903 and length 16', function() {
+    detectNetwork('4903123456789012').should.equal('Switch');
+  });
+  it('has prefix 4903 and length 18', function() {
+    detectNetwork('490312345678901234').should.equal('Switch');
+  });
+  it('has prefix 4903 and length 19', function() {
+    detectNetwork('4903123456789012345').should.equal('Switch');
+  });
+
+  //Tests prefix 4904 and length 16, 18, and 19
+  it('has prefix 4904 and length 16', function() {
+    detectNetwork('4904123456789012').should.equal('Switch');
+  });
+  it('has prefix 4904 and length 18', function() {
+    detectNetwork('490412345678901234').should.equal('Switch');
+  });
+  it('has prefix 4904 and length 19', function() {
+    detectNetwork('4904123456789012345').should.equal('Switch');
+  });
+  
+  //Tests prefix 4911 and lengths 16, 18, and 19
+  it('has prefix 4911 and length 16', function() {
+    detectNetwork('4911123456789012').should.equal('Switch');
+  });
+  it('has prefix 4911 and length 18', function() {
+    detectNetwork('491112345678901234').should.equal('Switch');
+  });
+  it('has prefix 4911 and length 19', function() {
+    detectNetwork('4911123456789012345').should.equal('Switch');
+  });
+  
+  //Tests prefix 4936 and lengths 16, 18, and 19
+  it('has prefix 4936 and length 16', function() {
+    detectNetwork('4936123456789012').should.equal('Switch');
+  });
+  it('has prefix 4936 and length 18', function() {
+    detectNetwork('493612345678901234').should.equal('Switch');
+  });
+  it('has prefix 4936 and length 19', function() {
+    detectNetwork('4936123456789012345').should.equal('Switch');
+  });
+
+  //Tests prefix 564182 and lengths 16, 18, and 19 
+  it('has prefix 564182 and length 16', function() {
+    detectNetwork('5641821234567890').should.equal('Switch');
+  });
+  it('has prefix 564182 and length 18', function() {
+    detectNetwork('564182123456789012').should.equal('Switch');
+  });
+  it('has prefix 564182 and length 19', function() {
+    detectNetwork('5641821234567890123').should.equal('Switch');
+  });
+  
+  //Tests prefix 633110 and lengths 16, 18, and 19
+  it('has prefix 633110 and length 16', function() {
+    detectNetwork('6331101234567890').should.equal('Switch');
+  });
+  it('has prefix 633110 and length 18', function() {
+    detectNetwork('633110123456789012').should.equal('Switch');
+  });
+  it('has prefix 633110 and length 19', function() {
+    detectNetwork('6331101234567890123').should.equal('Switch');
+  });
+  
+  //Tests prefix 6333 and lengths 16, 18, and 19
+  it('has prefix 6333 and length 16', function() {
+    detectNetwork('6333123456789012').should.equal('Switch');
+  });
+  it('has prefix 6333 and length 18', function() {
+    detectNetwork('633312345678901234').should.equal('Switch');
+  });
+  it('has prefix 6333 and length 19', function() {
+    detectNetwork('6333123456789012345').should.equal('Switch');
+  });
+  
+  //Tests prefix 6759 and lengths 16, 18, and 19
+  it('has prefix 6759 and length 16', function() {
+    detectNetwork('6759123456789012').should.equal('Switch');
+  });
+  it('has prefix 6759 and length 18', function() {
+    detectNetwork('675912345678901234').should.equal('Switch');
+  });
+  it('has prefix 6759 and length 19', function() {
+    detectNetwork('6759123456789012345').should.equal('Switch');
+  });
+  
+
+});
