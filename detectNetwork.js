@@ -17,10 +17,6 @@ var detectNetwork = function(cardNumber) {
   var splitCardNumber = cardNumber.split('');
   var network = "";
 
-  var test = function() {
-
-}
-
   //Diner's Club
   if(splitCardNumber.length === 14) {
     if(splitCardNumber.slice(0,2).join('') === "38" || splitCardNumber.slice(0,2).join('') === "39") {
@@ -34,6 +30,14 @@ var detectNetwork = function(cardNumber) {
       network = "American Express";
     }
   }
+
+  //Visa
+  if(splitCardNumber.length === 13 || splitCardNumber.length === 16 || splitCardNumber.length === 19) {
+    if(splitCardNumber[0] === "4") {
+      network = "Visa";
+    }
+  }
+
 
   return network;
 };
