@@ -38,6 +38,12 @@ var detectNetwork = function(cardNumber) {
     }
   }
 
+  //MasterCard
+  if(splitCardNumber.length === 16) {
+    if(splitCardNumber.slice(0,2).join('') >= "51" && splitCardNumber.slice(0,2).join('') <= "55") {
+      network = "MasterCard";
+    }
+  }
 
   return network;
 };
