@@ -315,5 +315,13 @@ describe('Maestro', function() {
   
 });
 
-describe('should support China UnionPay')
+describe('should support China UnionPay', function() {
+  //Tests prefixs 622126 - 622925 and length 16
+  it('has prefix between 622126 and 622925 and length 16', function() {
+    for (var prefix = 622126; prefix <= 622925; prefix++) {
+      detectNetwork(prefix + '1234567890').should.equal('China Union Pay');
+    }
+  });
+
+});
 describe('should support Switch')
