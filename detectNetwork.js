@@ -73,7 +73,20 @@ var detectNetwork = function(cardNumber) {
       }
   }
 
+  //Switch (needs to come after visa due to conflict in prefixs)
+  if(splitCardNumber.length === 16 || splitCardNumber.length === 18 || splitCardNumber.length === 19) {
+    if(splitCardNumber.slice(0,4).join('') === "4903" ||
+      splitCardNumber.slice(0,4).join('') === "4904" ||
+      splitCardNumber.slice(0,4).join('') === "4911" ||
+      splitCardNumber.slice(0,4).join('') === "4936" ||
+      splitCardNumber.slice(0,6).join('') === "564182" ||
+      splitCardNumber.slice(0,6).join('') === "633110" ||
+      splitCardNumber.slice(0,4).join('') === "6333" ||
+      splitCardNumber.slice(0,4).join('') === "6759") {
+        network = "Switch";
+      }
+  }
+
+
   return network;
 };
-
-
