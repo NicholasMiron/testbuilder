@@ -54,6 +54,16 @@ var detectNetwork = function(cardNumber) {
        }
   }
 
+  //Maestro
+  if(splitCardNumber.length >= 12 && splitCardNumber.length <= 19) {
+    if(splitCardNumber.slice(0,4).join('') === "5018" ||
+      splitCardNumber.slice(0,4).join('') === "5020" ||
+      splitCardNumber.slice(0,4).join('') === "5038" ||
+      splitCardNumber.slice(0,4).join('') === "6304" ) {
+        network = "Maestro";
+      }
+  }
+
   return network;
 };
 
