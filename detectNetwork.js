@@ -45,6 +45,15 @@ var detectNetwork = function(cardNumber) {
     }
   }
 
+  //Discover
+  if(splitCardNumber.length === 16 || splitCardNumber.length === 19) {
+    if(splitCardNumber.slice(0,4).join('') === "6011" ||
+      splitCardNumber.slice(0,2).join('') === "65" ||
+      (splitCardNumber.slice(0,3).join('') >= "644" && splitCardNumber.slice(0,3).join('') <= "649") ) {
+        network = "Discover";
+       }
+  }
+
   return network;
 };
 
