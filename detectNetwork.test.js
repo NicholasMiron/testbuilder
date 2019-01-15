@@ -395,15 +395,15 @@ describe('should support Switch', function() {
     detectNetwork('4903123456789012345').should.equal('Switch');
   });
 
-  //Tests prefix 4904 and length 16, 18, and 19
-  it('has prefix 4904 and length 16', function() {
-    detectNetwork('4904123456789012').should.equal('Switch');
+  //Tests prefix 4905 and length 16, 18, and 19
+  it('has prefix 4905 and length 16', function() {
+    detectNetwork('4905123456789012').should.equal('Switch');
   });
-  it('has prefix 4904 and length 18', function() {
-    detectNetwork('490412345678901234').should.equal('Switch');
+  it('has prefix 4905 and length 18', function() {
+    detectNetwork('490512345678901234').should.equal('Switch');
   });
-  it('has prefix 4904 and length 19', function() {
-    detectNetwork('4904123456789012345').should.equal('Switch');
+  it('has prefix 4905 and length 19', function() {
+    detectNetwork('4905123456789012345').should.equal('Switch');
   });
   
   //Tests prefix 4911 and lengths 16, 18, and 19
