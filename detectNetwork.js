@@ -64,6 +64,15 @@ var detectNetwork = function(cardNumber) {
       }
   }
 
+  //China UnionPay
+  if(splitCardNumber.length >= 16 && splitCardNumber.length <= 19) {
+    if((parseInt(splitCardNumber.slice(0,6).join(''), 10) >= "622126" && parseInt(splitCardNumber.slice(0,6).join(''), 10) <= "622925") ||
+      (parseInt(splitCardNumber.slice(0,3).join(''), 10) >= 624 && parseInt(splitCardNumber.slice(0,3).join(''), 10) <= 626) ||
+      (parseInt(splitCardNumber.slice(0,4).join(''), 10) >= 6282 && parseInt(splitCardNumber.slice(0,4).join(''), 10) <= 6288)) {
+        network = "China UnionPay";
+      }
+  }
+
   return network;
 };
 
