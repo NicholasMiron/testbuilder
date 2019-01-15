@@ -24,7 +24,14 @@ var detectNetwork = function(cardNumber) {
   //Diner's Club
   if(splitCardNumber.length === 14) {
     if(splitCardNumber.slice(0,2).join('') === "38" || splitCardNumber.slice(0,2).join('') === "39") {
-      network = "Diner's Club"
+      network = "Diner's Club";
+    }
+  }
+
+  //American Express
+  if(splitCardNumber.length === 15) {
+    if(splitCardNumber.slice(0,2).join('') === "34" || splitCardNumber.slice(0,2).join('') === "37") {
+      network = "American Express";
     }
   }
 
